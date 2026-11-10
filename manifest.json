@@ -1,0 +1,13 @@
+{
+  "display_name": "ST Selection Editor",
+  "loading_order": 120,
+  "requires": [],
+  "optional": [],
+  "js": "index.js",
+  "css": "style.css",
+  "author": "Yasmin Isis",
+  "version": "1.0.0",
+  "description": "Edit or delete selected text manually or through an OpenAI-compatible AI rewrite.",
+  "homePage": "https://github.com/yasminisismignac-blip/st-selection-editor",
+  "auto_update": false
+}
