@@ -4,7 +4,7 @@ Uma extensão para SillyTavern que permite:
 
 - editar texto selecionado manualmente
 - apagar a seleção
-- pedir para a IA reescrever o texto selecionado usando uma API OpenAI-compatible
+- pedir para o próprio modelo do SillyTavern reescrever o texto selecionado
 - funcionar em desktop e celular
 
 ## Instalação
@@ -23,28 +23,23 @@ https://github.com/yasminisismignac-blip/st-selection-editor
 
 - Selecione um texto em qualquer caixa de texto do chat ou em um campo editável.
 - Pressione o botão `✏️` no canto inferior direito.
-- Ou use o atalho `Ctrl/Cmd + E`.
+- Ou use `Ctrl/Cmd + E`.
 - No painel:
   - edite manualmente
-  - clique em `Aplicar`
-  - clique em `Apagar`
-  - ou use `IA`
+  - clique em `Aplicar edição`
+  - clique em `Apagar seleção`
+  - ou use `IA do SillyTavern`
 
-## Configuração da IA
+## Observação importante
 
-Preencha:
+Esta versão usa o modelo que o SillyTavern já está usando, sem pedir API key nem URL.
+A extensão salva a seleção original antes de abrir o painel, para evitar o problema em que o foco muda e o texto não era realmente alterado.
 
-- API key
-- Base URL
-- Modelo
-- Prompt
+## Correção aplicada
 
-A extensão usa o formato OpenAI-compatible:
+A lógica de edição foi corrigida para:
 
-```text
-https://api.openai.com/v1/chat/completions
-```
-
-## Observação
-
-Este addon foi pensado para editar texto selecionado de forma rápida e simples, sem depender de frameworks pesados.
+- capturar a seleção ativa antes de abrir o painel
+- voltar o texto para o campo original
+- apagar a seleção corretamente
+- reaproveitar o modelo atual do SillyTavern para a IA
